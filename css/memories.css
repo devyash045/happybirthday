@@ -195,6 +195,7 @@
   color: var(--white-muted);
   line-height: 1.75;
   margin-bottom: 1.8rem;
+  white-space: pre-line;
 }
 
 /* Symbolic CSS Illustration Box (Safe Privacy alternative) */

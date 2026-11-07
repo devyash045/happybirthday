@@ -55,72 +55,72 @@ window.BIRTHDAY_CONFIG = {
     {
       id: 1,
       title: "The Beginning — Instagram",
-      subtitle: "Where our paths first crossed in this digital world",
+      subtitle: "Woh ek follow aur 'Hello' ka safar...",
       date: "Spring 2026",
       icon: "✨",
-      summary: "A quiet follow, a shy story reply, and the beginning of conversations that would soon become the most important part of my day.",
-      detail: "Who could have known that a simple interaction on Instagram would lead to finding the person who understands my silence, heals my worries, and fills my life with genuine warmth? Every message with you felt effortless, like coming home.",
-      quote: "In a world of billions of profiles, my heart found its only home in yours."
+      summary: "Kise pata tha ki Instagram par woh ek follow aur 'Hello' humari poori duniya badal dega...",
+      detail: "Kise pata tha ki woh ek follow aur woh ek 'Hello' ka message, aur phir mera aapko 'Madam ji' bolna, aapka us par gussa karna... phir dheere-dheere baat start hona ek din humari kahani ko is mukaam tak le aayega! Jahan do anjaan log ek doosre ki poori duniya banne wale the.",
+      quote: "Ek anjaan follow se shuru hui baat, aaj meri zindagi ka sabse khoobsurat mukaam ban chuki hai."
     },
     {
       id: 2,
       title: "From Strangers to Friends",
-      subtitle: "Late night laughs, shared thoughts & quiet trust",
+      subtitle: "Do anjaan log aur Rohit Sharma ke liye humara pyaar...",
       date: "Spring 2026",
-      icon: "🌙",
-      summary: "Hours slipping away unnoticed as we shared stories, thoughts, and little details of our lives.",
-      detail: "Talking to you quickly went from an occasional habit to the absolute highlight of my routine. You listened with so much patience, understood without judgment, and showed me a kindness I had never experienced before.",
-      quote: "The comfort of finding someone who truly listens is the rarest gift."
+      icon: "🏏",
+      summary: "Baat do anjaan logon se shuru hui thi, phir Rohit Sharma ki wajah se aage badhi. Dono ko hi Rohit pasand tha, hai aur hamesha rahega!",
+      detail: "Baat do anjaan logon se shuru hui thi, phir Rohit Sharma ki wajah se aage badhi... Hum dono ko hi Rohit pasand tha, hai aur hamesha rahega! Aur is ek pasand ne hum dono ke beech ek rishta bana diya, hum dono ko itna kareeb la diya ki pata hi nahi chala kab anjaan se dost aur dosti se pyaar ka rishta jud gaya.",
+      quote: "Hum dono ki pasand ek thi, aur usi pasand ne hum dono ko ek doosre ke itna kareeb la diya."
     },
     {
       id: 3,
       title: "The Little Hints",
-      subtitle: "The unsaid words, sweet glances & playful teasing",
+      subtitle: "Jab tumne dheere-dheere hints dena start kiya tha...",
       date: "March 2026",
       icon: "🌸",
-      summary: "The subtle signs, the blush behind the screen, and the unmistakable feeling that our hearts were speaking the same language.",
-      detail: "You gave me those adorable, gentle hints that made my heart race every single time. The playful teasing, the care disguised as everyday questions, and that sweet possessiveness that made me realize you felt this magic too.",
-      quote: "Sometimes love doesn't shout; it whispers in the sweetest little hints."
+      summary: "Tum hints de rahi thi, main bhi hints de raha tha... ki koi toh bole, koi toh confess kare!",
+      detail: "Jab tumne dheere-dheere hints dena start kiya tha... Tum hints de rahi thi, main bhi hints de raha tha, hum dono aapas me hints de rahe the ki koi toh bole, koi toh aage badhkar confess kare! Dil me hazaron baatein thi, chehre par woh sharm aur bechaini... Sach me, kya toh pal tha woh!",
+      quote: "Woh hints ka daur kitna khoobsurat tha... Dilon ko sab khabar thi, bas zubaan par aane ki deri thi."
     },
     {
       id: 4,
       title: "The Proposal",
-      subtitle: "When I asked you to be my forever",
-      date: "02.04.2026",
+      subtitle: "2 April • Raat 10:52 PM • Woh unique shayari aur roses",
+      date: "02.04.2026 • 10:52 PM",
       icon: "💍",
-      summary: "The moment nervousness turned into purest joy, as two souls made a promise to walk together.",
-      detail: "My heart was pounding, my words felt small compared to how deeply I felt, but when you said yes, the whole universe seemed to align. That day marked the beginning of our official story — the day you became my Wifeee Jiii.",
-      quote: "Choosing you was the easiest, most beautiful decision of my life."
+      summary: "2 April raat me 10:52 par tumhe ek unique shayari bolkar propose kiya tha, jiska reply tumne 'hmm' diya tha!",
+      detail: "2 April ki raat me theek 10:52 par maine tumhe ek unique shayari bolkar propose kiya tha, jiska reply tumne sharmaakar sirf 'hmm' diya tha... Woh pal aaj bhi bilkul taza yaad hai! Uske baad maine rose ke bouquet ka photo download karke WhatsApp par bhi propose kiya tha, jiske reply me tumne 'I love you too' bola tha... Us raat toh maano khushi ke maare neend hi nahi aayi thi, woh humari zindagi ka sabse best moment tha!",
+      quote: "Tumhara woh 'I Love You Too' bolna aur meri woh khushi se jaagi hui raat — humara sabse pyara moment tha."
     },
     {
       id: 5,
-      title: "Our Beautiful Journey",
-      subtitle: "Through laughter, lessons, tears, and sincere growth",
+      title: "Our Journey — Har Mod Par Tumhara Sath",
+      subtitle: "Mushkilon me tumhara rukna, aur mera hamesha tumhare sath khada rehna...",
       date: "2026 & Always",
       icon: "🌹",
-      summary: "A journey of real love — celebrating our joys and learning to become better partners through every challenge.",
-      detail: "Real relationships are tested, and I know I have made mistakes and fallen short of perfection. Yet through every storm, your grace, patience, and love have taught me what true partnership means. I want to spend my life showing you that your trust is cherished and respected.",
+      summary: "Hamara relationship aasan nahi gaya, bohot mushkilein thi... Par tum ruki, tumne meri har galti ko samjha aur maaf kiya. Aur maine bhi har baar tumhara sath diya.",
+      detail: "Hamara relationship aasan nahi gaya, usme bohot si mushkilein thi. Aisi bohot si cheezein hui jisme koi bhi ladki hoti toh mujhe chhod kar jaa chuki hoti... Par tum ruki! Tumne meri har galti ko maaf kiya, jaane-anjaane me hui mistake ko bhi samjha aur mujhe har baar mauka diya. Maine tumhe bohot hurt kiya, par phir bhi mera sath kabhi nahi chhodha.\n\nMujhe bhi kayi mauko par tumhare sath khade rehna tha, mushkil faisle lene the... Har baar mera faisla tumhare sath tha! Tumne jo bola maine sab kuch maana, har baar tumhara sath diya, aur sukh me, dukh me, har ek cheez me tumhare sath raha taaki tumhari us asli muskan ko bahar la sakun.\n\nMain bas isi tarah hamesha tumhare sath rehna chahta hoon. Galti khatam toh nahi kar sakta hoon, par kam karne ki poori koshish kar sakta hoon. Galtiyan hoti rahengi aur main hamesha isi tarah tumhe manata rahunga... aur tumhe hamesha apne paas apni rani, apni Laxmi banakar rakhunga!",
       accountability: {
         title: "I Know I Haven't Always Been Perfect...",
         points: [
-          "I sincerely recognize my mistakes and shortcomings.",
-          "I understand that your forgiveness is precious and never to be taken for granted.",
-          "I am committed to rebuilding and strengthening your trust through consistent, everyday actions.",
-          "I promise to always honour your feelings, your individuality, and your boundaries.",
-          "I want to continuously grow into the caring, responsible, and devoted partner you deserve."
+          "Maine tumhe bohot hurt kiya aur jaane-anjaane galtiyan ki, jiske liye main dil se sharminda hoon aur har galti ki zimmedari leta hoon.",
+          "Koi bhi hoti toh chhod kar chali jaati, par tum ruki, har galti ko maaf kiya aur mujhe mauka diya — tumhare is vishwas ki qadar main hamesha karunga.",
+          "Galti poori tarah khatam toh nahi kar sakta, par unhe kam karne aur ek behtar partner banne ki har roz koshish karunga.",
+          "Jaise har mushkil faisle me tumhara sath diya aur jo tumne bola maana, aage bhi sukh me dukh me hamesha tumhare sath khada rahunga.",
+          "Galtiyan hoti rahengi aur main hamesha isi tarah tumhe manata rahunga, aur hamesha apne paas apni rani, 'Meri Personal Laxmi' banakar rakhunga."
         ]
       },
-      quote: "True love isn't about never stumbling; it's about standing back up, hand in hand, with deeper respect."
+      quote: "Galtiyan hoti rahengi aur main hamesha isi tarah tumhe manata rahunga... meri rani, meri Laxmi."
     },
     {
       id: 6,
       title: "Since 02.04.2026 — Our Little Forever",
-      subtitle: "A bond woven with faith, care, and eternity",
+      subtitle: "Meri Dharam Patni, Meri Personal Laxmi, Meri Pari",
       date: "02.04.2026 — ∞",
       icon: "👑",
-      summary: "The timeless bond we share. You are my best friend, my protector, and my personal Laxmi.",
-      detail: "From 2nd April 2026 into every tomorrow that awaits us, you remain my anchor. You worry about me, care for me more than I care for myself, and bring light into every shadow. Today and forever, you are my Pari.",
-      quote: "Some love stories are written for a season; ours is written for the stars."
+      summary: "2 April 2026 se shuru hua yeh safar ab ta-umra ke liye hai. Tum meri sabse pyaari dost, meri rani, aur meri Laxmi ho.",
+      detail: "02.04.2026 se shuru hua hamara yeh 'Little Forever' har beette din ke saath aur gehra hota jaa raha hai. Tum mera khayal rakhti ho, meri fikar mujhse zyada karti ho, aur mere liye apni pasand tak badal leti ho. Aaj tumhare janamdin aur Diwali ke is paavan din par, main bhagwan ka shukriya adaa karta hoon ki unhone mujhe tumhare roop me meri sabse badi khushi de di.",
+      quote: "02.04.2026 se lekar saari zindagani tak... meri har dua, meri har muskan sirf tumhare naam hai, Wifeee Jiii."
     }
   ],
 
