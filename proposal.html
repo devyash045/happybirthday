@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>An Eternal Question — Muskan's Universe</title>
+  <meta name="description" content="On this sacred occasion of your birthday and Diwali, asking for your hand once again for all eternity.">
+  <meta name="theme-color" content="#050713">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💍</text></svg>">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/proposal.css">
+</head>
+<body>
+
+  <!-- Ambient Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient music" title="Toggle peaceful ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open chapters" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link active"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene -->
+  <main class="page-wrapper" role="main">
+    <div class="container container-narrow">
+      <header class="page-header">
+        <div class="tag-pill royal">
+          <span>💍</span>
+          <span>A Sacred Moment For Pari</span>
+        </div>
+        <h1 class="main-title">Aaj Is Mauke Par, Ek Baar Phir...</h1>
+        <p class="subtitle">
+          Hamara safar shuru ho chuka hai, par aaj mai apne poore dil se tumhe dobara maangna chahta hoon.
+        </p>
+      </header>
+
+      <div class="proposal-scene">
+        <!-- Proposal Shayari Card -->
+        <article class="shayari-card">
+          <span class="shayari-badge">Dil Se Sirf Aapke Liye 🌹</span>
+          <p class="shayari-verse">
+            “Duniya kehti hai ishq bas ek baar hota hai,
+            Magar mujhe toh <strong>har din tujhse naya pyaar</strong> hota hai...
+            Diwali ke diye toh sirf ek raat aangan roshan karte hain,
+            Par <strong>teri muskurahat</strong> se meri har raat ka aasmaan roshan hota hai.
+
+            Na chaand sitaron ki khwahish hai,
+            Na kisi jannat ki talab,
+            Meri toh bas itni si dua hai rab se,
+            Ki <strong>tera haath mere haath me rahe</strong> zindagi bhar.”
+          </p>
+          <span class="shayari-author">— Hamesha Sirf Tumhara, Yash ❤️</span>
+        </article>
+
+        <!-- 3D Velvet Ring Box -->
+        <div id="ring-box-wrapper" class="ring-box-wrapper" role="button" tabindex="0" aria-label="Tap to open the royal velvet ring box">
+          <div class="ring-box-pedestal">
+            <div class="ring-box">
+              <div class="ring-box-bottom">
+                <div class="diamond-ring">
+                  <div class="ring-band"></div>
+                  <div class="ring-gem">💎</div>
+                </div>
+              </div>
+              <div class="ring-box-lid"></div>
+            </div>
+          </div>
+          <span class="box-hint">Tap to open the velvet box 💍</span>
+        </div>
+
+        <!-- The Proposal Question Box (Reveals upon opening the ring box) -->
+        <section id="proposal-question-box" class="proposal-question-box" aria-label="Will you marry me again">
+          <h2 class="proposal-big-title">
+            Will You Walk This Lifetime With Me?
+          </h2>
+
+          <p class="proposal-speech">
+            Meri Pari, meri <strong>Wifeee Jiii</strong>, meri <strong>Dharam Patni</strong>...<br>
+            Hum <strong>02.04.2026</strong> se ek doosre ka haath thaame chal rahe hain. Maine ghaltiyan bhi ki hain, seekha bhi hai, par mera dil har subah aur har dhalti shaam sirf tumhare liye dhadakta hai.<br><br>
+            Aaj tumhare janamdin aur is <strong>Diwali</strong> ke shubh mauke par, mere dil me sirf ek hi tamanna hai — ki aane wale har kal me, har muskurahat me aur har mushkil me, mai tumhara sabse sachha dost, hamsafar aur sahara ban kar khada rahoon.<br><br>
+            <strong>Meri Personal Laxmi, will you choose me forever? 💍</strong>
+          </p>
+
+          <div class="proposal-btn-group">
+            <a href="celebration.html" id="btn-proposal-yes" class="btn btn-royal btn-yes" data-transition="true">
+              <span>A Thousand Times YES! 💍💖</span>
+            </a>
+            <button id="btn-proposal-shy" type="button" class="btn btn-secondary">
+              <span>Blushing Yes 🙈</span>
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!-- Shy Modal Overlay -->
+      <div id="shy-modal-overlay" class="shy-modal-overlay" role="dialog" aria-modal="true">
+        <div class="shy-modal">
+          <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">🙈 💖 🌹</div>
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--champagne-gold); margin-bottom: 0.8rem;">
+            Aapki Sharm Hi Meri Sabse Badi Daulat Hai
+          </h3>
+          <p style="color: var(--pearl-white); font-size: 1.05rem; line-height: 1.6; margin-bottom: 1.8rem; font-family: var(--font-serif);">
+            Aapki yeh pyaari si sharm aur bholi si muskaan hi mere dil ka sukoon hai. <br>
+            Ab chalo, poore universe ke saath is khushi ka jashn manate hain! ✨
+          </p>
+          <a href="celebration.html" id="btn-shy-proceed" class="btn btn-primary" data-transition="true">
+            <span>Start The Grand Celebration 🎆</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Journey Footer -->
+      <footer class="journey-footer">
+        <a href="our-future.html" class="footer-nav-btn" data-transition="true">&larr; Return to Our Future</a>
+        <span class="journey-step-indicator">Step 10 of 12</span>
+        <a href="celebration.html" class="btn btn-primary" data-transition="true">
+          <span>Let's Celebrate!</span>
+          <span aria-hidden="true">🎆 &rarr;</span>
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/proposal.js"></script>
+</body>
+</html>

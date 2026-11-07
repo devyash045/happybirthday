@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Memories Only We Know — Muskan's Universe</title>
+  <meta name="description" content="An interactive memory constellation and storybook celebrating our journey.">
+  <meta name="theme-color" content="#050713">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⭐</text></svg>">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/memories.css">
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient music" title="Toggle peaceful ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open chapters" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link active"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene -->
+  <main class="page-wrapper" role="main">
+    <div class="container">
+      <header class="page-header">
+        <div class="tag-pill">
+          <span>⭐</span>
+          <span>Chapter 4 • Our Journey</span>
+        </div>
+        <h1 class="main-title">Memories Only We Know</h1>
+        <p class="subtitle">
+          Every chapter of our story is written in the stars. Click a star or turn the pages below.
+        </p>
+      </header>
+
+      <!-- Constellation Track -->
+      <section class="constellation-wrapper" aria-label="Constellation Chapters">
+        <div class="constellation-heading">
+          <span class="constellation-title">The Memory Constellation</span>
+          <span class="constellation-hint">Tap any star to jump to that memory ✨</span>
+        </div>
+        <div id="constellation-track" class="constellation-track" role="tablist">
+          <!-- Populated by memories.js -->
+        </div>
+      </section>
+
+      <!-- 3D Storybook -->
+      <section class="storybook-container" aria-label="Storybook Reader">
+        <article id="storybook" class="storybook">
+          <div class="chapter-meta">
+            <span id="chapter-badge" class="chapter-badge">Chapter 1 of 6</span>
+            <span id="chapter-date" class="chapter-date">Spring 2026</span>
+          </div>
+
+          <div class="chapter-body">
+            <h2 id="chapter-title" class="chapter-title">The Beginning — Instagram</h2>
+            <p id="chapter-subtitle" class="chapter-subtitle">Where our paths first crossed</p>
+
+            <!-- Symbolic CSS Illustration (Privacy Safeguard) -->
+            <div class="symbolic-art-box">
+              <span id="art-icon" class="art-icon" aria-hidden="true">✨</span>
+              <p id="art-text" class="art-text">A quiet follow, a shy story reply...</p>
+            </div>
+
+            <p id="chapter-detail" class="chapter-detail">
+              Talking to you quickly became the highlight of every day.
+            </p>
+
+            <!-- Special Accountability Callout (Revealed for Chapter 5) -->
+            <div id="accountability-box" class="accountability-box" style="display: none;">
+              <h3 class="accountability-title">
+                <span>🤍</span>
+                <span>I Know I Haven't Always Been Perfect...</span>
+              </h3>
+              <ul id="accountability-list" class="accountability-list">
+                <!-- Dynamically rendered -->
+              </ul>
+            </div>
+
+            <blockquote id="chapter-quote" class="chapter-quote">
+              “In a world of billions of profiles, my heart found its only home in yours.”
+            </blockquote>
+          </div>
+
+          <!-- Controls -->
+          <div class="storybook-controls">
+            <button id="prev-chapter-btn" class="page-btn" type="button" aria-label="Previous Chapter">&larr; Previous</button>
+            <span id="page-tracker" class="page-tracker">1 / 6</span>
+            <button id="next-chapter-btn" class="page-btn" type="button" aria-label="Next Chapter">Next &rarr;</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- Journey Footer -->
+      <footer class="journey-footer">
+        <a href="hero.html" class="footer-nav-btn" data-transition="true">&larr; Return to Memory Orb</a>
+        <span class="journey-step-indicator">Step 4 of 11</span>
+        <a href="love-letter.html" class="btn btn-primary" data-transition="true">
+          <span>Read My Letter</span>
+          <span aria-hidden="true">💌 &rarr;</span>
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/memories.js"></script>
+</body>
+</html>
+

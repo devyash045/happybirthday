@@ -1,0 +1,344 @@
+/* ==========================================================================
+   PAGE 4: memories.css — Interactive Constellation & 3D Storybook
+   "Memories Only We Know"
+   ========================================================================== */
+
+/* Constellation Map Canvas / Arena */
+.constellation-wrapper {
+  position: relative;
+  background: radial-gradient(circle at 50% 30%, rgba(35, 18, 69, 0.5) 0%, rgba(9, 6, 25, 0.8) 100%);
+  border: 1px solid var(--glass-border);
+  border-radius: 28px;
+  padding: 2rem 1.5rem;
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: var(--glass-shadow);
+  margin-bottom: 3.5rem;
+  overflow: hidden;
+}
+
+.constellation-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.constellation-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--champagne-gold);
+}
+
+.constellation-hint {
+  font-size: 0.85rem;
+  color: var(--lavender-light);
+}
+
+/* Star Constellation Nav Track */
+.constellation-track {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 1.5rem 0.5rem;
+  overflow-x: auto;
+  gap: 1rem;
+}
+
+.constellation-track::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  right: 20px;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(187, 166, 230, 0.2) 0%, rgba(244, 208, 111, 0.6) 50%, rgba(242, 167, 203, 0.4) 100%);
+  z-index: 1;
+}
+
+.star-node {
+  position: relative;
+  z-index: 2;
+  background: var(--deep-purple);
+  border: 2px solid rgba(187, 166, 230, 0.4);
+  color: var(--pearl-white);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  flex-shrink: 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.star-node:hover {
+  transform: scale(1.18);
+  border-color: var(--champagne-gold);
+  box-shadow: 0 0 20px rgba(244, 208, 111, 0.6);
+}
+
+.star-node.active {
+  background: linear-gradient(135deg, #e63956 0%, #8e2de2 100%);
+  border-color: var(--champagne-gold);
+  transform: scale(1.22);
+  box-shadow: 0 0 25px rgba(244, 208, 111, 0.8), 0 0 15px rgba(230, 57, 86, 0.5);
+}
+
+.star-node-label {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  color: var(--white-muted);
+  white-space: nowrap;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3D STORYBOOK EXPERIENCE
+   ========================================================================== */
+
+.storybook-container {
+  perspective: 1400px;
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem auto 3rem;
+  width: 100%;
+}
+
+.storybook {
+  position: relative;
+  width: min(720px, 100%);
+  min-height: 480px;
+  background: linear-gradient(135deg, rgba(28, 17, 56, 0.95) 0%, rgba(16, 9, 36, 0.95) 100%);
+  border: 1px solid var(--glass-border-gold);
+  border-radius: 24px;
+  box-shadow: 
+    -10px 15px 40px rgba(0, 0, 0, 0.7),
+    0 0 50px rgba(244, 208, 111, 0.15),
+    inset 0 0 40px rgba(0, 0, 0, 0.4);
+  padding: clamp(2rem, 5vw, 3.5rem);
+  transform-style: preserve-3d;
+  transition: transform 0.6s var(--ease-gentle);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Glowing Book Spine Effect */
+.storybook::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 12px;
+  background: linear-gradient(90deg, rgba(244, 208, 111, 0.7), rgba(187, 166, 230, 0.2));
+  border-top-left-radius: 24px;
+  border-bottom-left-radius: 24px;
+}
+
+.chapter-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(187, 166, 230, 0.18);
+  padding-bottom: 1.2rem;
+  margin-bottom: 1.8rem;
+}
+
+.chapter-badge {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--champagne-gold);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.chapter-date {
+  font-size: 0.85rem;
+  color: var(--lavender-light);
+  font-style: italic;
+}
+
+.chapter-body {
+  flex-grow: 1;
+}
+
+.chapter-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.3rem);
+  font-weight: 700;
+  color: var(--pearl-white);
+  margin-bottom: 0.5rem;
+}
+
+.chapter-subtitle {
+  font-size: 1rem;
+  color: var(--soft-pink);
+  font-style: italic;
+  margin-bottom: 1.4rem;
+}
+
+.chapter-detail {
+  font-size: clamp(0.95rem, 2.2vw, 1.08rem);
+  color: var(--white-muted);
+  line-height: 1.75;
+  margin-bottom: 1.8rem;
+}
+
+/* Symbolic CSS Illustration Box (Safe Privacy alternative) */
+.symbolic-art-box {
+  background: rgba(10, 6, 22, 0.6);
+  border: 1px dashed rgba(187, 166, 230, 0.25);
+  border-radius: 18px;
+  padding: 1.25rem;
+  margin-bottom: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.art-icon {
+  font-size: 2.2rem;
+  flex-shrink: 0;
+  filter: drop-shadow(0 0 10px rgba(244, 208, 111, 0.5));
+}
+
+.art-text {
+  font-size: 0.92rem;
+  color: var(--white-muted);
+  font-style: italic;
+}
+
+/* Sincere Accountability Callout Section */
+.accountability-box {
+  background: linear-gradient(135deg, rgba(45, 18, 40, 0.7), rgba(20, 11, 35, 0.7));
+  border-left: 4px solid var(--soft-pink);
+  border-radius: 0 16px 16px 0;
+  padding: 1.4rem 1.6rem;
+  margin: 1.6rem 0;
+}
+
+.accountability-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  color: var(--champagne-gold);
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.accountability-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.accountability-list li {
+  font-size: 0.92rem;
+  color: var(--pearl-white);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  line-height: 1.5;
+}
+
+.accountability-list li span:first-child {
+  color: var(--soft-pink);
+  flex-shrink: 0;
+}
+
+/* Romantic Quote Footer of Book */
+.chapter-quote {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-style: italic;
+  color: var(--champagne-gold);
+  border-top: 1px solid rgba(187, 166, 230, 0.15);
+  padding-top: 1.2rem;
+  margin-top: 1.2rem;
+}
+
+/* Book Pagination Controls */
+.storybook-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.page-btn {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  color: var(--pearl-white);
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.page-btn:hover:not(:disabled) {
+  background: var(--glass-bg-hover);
+  border-color: var(--champagne-gold);
+  transform: translateY(-2px);
+}
+
+.page-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.page-tracker {
+  font-size: 0.88rem;
+  color: var(--lavender-light);
+  font-family: var(--font-display);
+}
+
+@media (max-width: 640px) {
+  .constellation-wrapper {
+    padding: 1.25rem 0.8rem;
+    border-radius: 20px;
+  }
+  .constellation-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+  }
+  .storybook {
+    padding: 1.5rem 1.1rem;
+    border-radius: 18px;
+    min-height: auto;
+  }
+  .symbolic-art-box {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.6rem;
+  }
+  .accountability-box {
+    padding: 1rem 1.1rem;
+  }
+  .storybook-controls {
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+  }
+}
+

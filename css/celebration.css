@@ -1,0 +1,428 @@
+/* ==========================================================================
+   PAGE 10: celebration.css — Grand Fireworks, Confetti & Interactive Balloon Fiesta
+   "It's Your Universe, Pari!"
+   ========================================================================== */
+
+.celebration-arena {
+  position: relative;
+  min-height: calc(100vh - 6rem);
+  min-height: calc(100svh - 6rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+/* Dedicated Fireworks Canvas Layer */
+#fireworks-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 8;
+  cursor: crosshair;
+}
+
+/* Sky Tap Hint Pill */
+.sky-hint-pill {
+  position: fixed;
+  top: 5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(18, 11, 41, 0.75);
+  border: 1px solid var(--champagne-gold);
+  color: var(--champagne-gold);
+  padding: 0.45rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  z-index: 900;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5), 0 0 15px rgba(244, 208, 111, 0.3);
+  pointer-events: none;
+  animation: hintBreathe 3s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+@keyframes hintBreathe {
+  0% { transform: translateX(-50%) translateY(0); opacity: 0.75; }
+  100% { transform: translateX(-50%) translateY(-4px); opacity: 1; box-shadow: 0 4px 25px rgba(244, 208, 111, 0.5); }
+}
+
+/* Celebration Card */
+.celebration-card {
+  position: relative;
+  z-index: 10;
+  max-width: 820px;
+  width: 100%;
+  background: radial-gradient(circle at 50% 20%, rgba(35, 18, 69, 0.85) 0%, rgba(18, 11, 41, 0.7) 100%);
+  border: 1.5px solid var(--champagne-gold);
+  border-radius: 36px;
+  padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 3.5rem);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), 0 0 60px rgba(244, 208, 111, 0.45);
+}
+
+.celebration-crown {
+  font-size: 3.8rem;
+  margin-bottom: 0.8rem;
+  animation: crownFloat 3s ease-in-out infinite alternate;
+  display: inline-block;
+  filter: drop-shadow(0 0 25px rgba(244, 208, 111, 0.9));
+}
+
+@keyframes crownFloat {
+  0% { transform: translateY(0) rotate(-6deg) scale(1); }
+  100% { transform: translateY(-12px) rotate(6deg) scale(1.08); }
+}
+
+.celebration-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 7vw, 4.2rem);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, #ffffff 0%, var(--champagne-gold) 35%, var(--soft-pink) 70%, var(--rose-red) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 35px rgba(242, 167, 203, 0.6));
+  animation: rainbowShine 6s linear infinite;
+}
+
+@keyframes rainbowShine {
+  0% { background-position: 0% center; }
+  100% { background-position: 200% center; }
+}
+
+.celebration-subtitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.2rem, 3.2vw, 1.8rem);
+  font-style: italic;
+  color: var(--white-muted);
+  margin-bottom: 2rem;
+}
+
+.celebration-subtitle span {
+  color: var(--champagne-gold);
+  font-weight: 600;
+  font-style: normal;
+  text-shadow: 0 0 15px rgba(244, 208, 111, 0.5);
+}
+
+/* ==========================================================================
+   Interactive Birthday Mystery Box on Card
+   ========================================================================== */
+
+.mystery-gift-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.5rem auto 2.2rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.mystery-gift-box {
+  width: 76px;
+  height: 76px;
+  position: relative;
+  transition: transform 0.3s var(--ease-spring);
+  animation: giftWiggle 3.5s ease-in-out infinite;
+}
+
+@keyframes giftWiggle {
+  0%, 80%, 100% { transform: rotate(0deg) scale(1); }
+  85% { transform: rotate(-8deg) scale(1.08); }
+  90% { transform: rotate(8deg) scale(1.08); }
+  95% { transform: rotate(-5deg) scale(1.05); }
+}
+
+.gift-lid {
+  position: absolute;
+  top: 0;
+  left: -4px;
+  right: -4px;
+  height: 22px;
+  background: linear-gradient(135deg, #f4d06f 0%, #d4af37 100%);
+  border-radius: 8px 8px 3px 3px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4), 0 0 15px rgba(244, 208, 111, 0.6);
+  z-index: 2;
+  transition: transform 0.6s var(--ease-spring);
+}
+
+.gift-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 56px;
+  background: linear-gradient(135deg, #e63956 0%, #a82470 100%);
+  border-radius: 4px 4px 12px 12px;
+  box-shadow: 0 8px 25px rgba(230, 57, 86, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift-ribbon {
+  font-size: 1.6rem;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.6));
+}
+
+.mystery-gift-wrapper.opened .gift-lid {
+  transform: translateY(-40px) rotate(-35deg) scale(0.9);
+}
+
+.mystery-gift-wrapper.opened .mystery-gift-box {
+  animation: none;
+}
+
+.gift-caption {
+  font-size: 0.85rem;
+  color: var(--champagne-gold);
+  margin-top: 0.75rem;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.mystery-gift-wrapper:hover .gift-caption {
+  color: var(--soft-pink);
+}
+
+/* Revealed Secret Message Popup */
+.gift-message-popup {
+  background: rgba(20, 11, 42, 0.95);
+  border: 1px solid var(--champagne-gold);
+  border-radius: 18px;
+  padding: 1.25rem 1.6rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), 0 0 25px rgba(244, 208, 111, 0.35);
+  animation: scaleFadeIn 0.4s var(--ease-spring) forwards;
+}
+
+@keyframes scaleFadeIn {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.gift-message-popup p {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  line-height: 1.6;
+  color: var(--pearl-white);
+}
+
+/* Celebration Controls Deck */
+.celebration-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Clickable / Poppable 3D Floating Balloons
+   ========================================================================== */
+
+.balloon-cluster {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.balloon {
+  position: absolute;
+  bottom: -160px;
+  width: 58px;
+  height: 72px;
+  border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.6));
+  animation: floatUp 9s linear infinite;
+  user-select: none;
+}
+
+.balloon:hover {
+  transform: scale(1.18);
+}
+
+/* 3D Gloss Highlight */
+.balloon::before {
+  content: '';
+  position: absolute;
+  top: 10px;
+  left: 12px;
+  width: 14px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: rotate(-35deg);
+  filter: blur(1px);
+}
+
+/* Balloon String */
+.balloon-string {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.5px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.35);
+  transform-origin: top center;
+  animation: stringWave 2s ease-in-out infinite alternate;
+}
+
+@keyframes stringWave {
+  0% { transform: translateX(-50%) rotate(-8deg); }
+  100% { transform: translateX(-50%) rotate(8deg); }
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.95;
+  }
+  100% {
+    transform: translateY(-130vh) rotate(22deg);
+    opacity: 0;
+  }
+}
+
+/* Pop Feedback Badge (Floating Love Tag) */
+.pop-tag {
+  position: fixed;
+  pointer-events: none;
+  z-index: 10000;
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--champagne-gold);
+  background: rgba(14, 8, 30, 0.9);
+  border: 1px solid var(--soft-pink);
+  padding: 0.35rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(242, 167, 203, 0.6);
+  transform: translate(-50%, -50%) scale(0.8);
+  animation: floatPopScore 1.2s cubic-bezier(0.1, 0.8, 0.3, 1) forwards;
+}
+
+@keyframes floatPopScore {
+  0% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -120px) scale(1.2);
+  }
+}
+
+/* ==========================================================================
+   Floating Traditional Diwali Diyas (Festival of Lights)
+   ========================================================================== */
+
+.diya-cluster {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9;
+}
+
+.diya {
+  position: absolute;
+  width: 52px;
+  height: 32px;
+  pointer-events: auto;
+  cursor: pointer;
+  filter: drop-shadow(0 4px 15px rgba(255, 165, 0, 0.6));
+  animation: diyaDrift 14s ease-in-out infinite alternate;
+  user-select: none;
+  transition: transform 0.3s ease;
+}
+
+.diya:hover {
+  transform: scale(1.25);
+}
+
+.diya-base {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: radial-gradient(circle at 50% 100%, #8b4513 0%, #d2691e 50%, #ffd700 90%);
+  border-radius: 0 0 50px 50px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.7), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(244, 208, 111, 0.6);
+}
+
+.diya-flame {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 22px;
+  border-radius: 50% 50% 20% 20% / 60% 60% 30% 30%;
+  background: radial-gradient(circle at 50% 75%, #ffffff 0%, #fff7a1 25%, #ffb703 55%, #fb8500 80%, #d00000 100%);
+  box-shadow: 0 0 18px #ffb703, 0 0 30px #fb8500, 0 0 45px rgba(255, 183, 3, 0.5);
+  animation: flameFlicker 0.22s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+@keyframes flameFlicker {
+  0% { transform: translateX(-50%) rotate(-3deg) scaleY(0.95); opacity: 0.9; }
+  100% { transform: translateX(-50%) rotate(3deg) scaleY(1.08); opacity: 1; }
+}
+
+@keyframes diyaDrift {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-18px) translateX(12px); }
+  100% { transform: translateY(6px) translateX(-10px); }
+}
+
+/* ==========================================================================
+   Responsive Adaptations for Celebration Arena
+   ========================================================================== */
+@media (max-width: 480px) {
+  .celebration-arena {
+    padding: 1.2rem 0.8rem;
+  }
+
+  .celebration-card {
+    padding: 2rem 1.1rem;
+    border-radius: 24px;
+  }
+
+  .celebration-crown {
+    font-size: 2.8rem;
+  }
+
+  .celebration-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .celebration-controls .btn-primary,
+  .celebration-controls .btn-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+}

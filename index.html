@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>A Surprise For Wifeee Jiii — Muskan's Universe</title>
+  <meta name="description" content="A cinematic romantic universe made exclusively for Muskan (Pari). Happy Birthday!">
+  <meta name="theme-color" content="#050713">
+
+  <!-- Favicon / Touch Icon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+
+  <!-- Background Ambient Atmosphere Canvas -->
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <!-- Cosmic Halos -->
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Persistent Header & Navigation -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Muskan's Universe Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <!-- Ambient Chime / Music Synthesizer Toggle -->
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient romantic melody" title="Toggle gentle ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <!-- All-Pages Drawer Toggle -->
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open journey directory" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Navigation Drawer (Allows jumping across unlocked chapters anytime) -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Universe chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link active"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene Wrapper -->
+  <main class="page-wrapper" role="main">
+    <div class="hero-entrance">
+      <div class="entrance-card">
+        <!-- Floating Visual Accents (White rose, red rose, starlight) -->
+        <span class="floating-accent accent-1" aria-hidden="true">🤍</span>
+        <span class="floating-accent accent-2" aria-hidden="true">🌹</span>
+
+        <div class="tag-pill">
+          <span>💖</span>
+          <span>A Surprise For Wifeee Jiii</span>
+        </div>
+
+        <h1 class="entrance-title">
+          I Have Something Special For You...
+        </h1>
+
+        <p class="entrance-subtitle">
+          A little universe, made only for you.
+        </p>
+
+        <!-- Interactive Action Arena with dodge button -->
+        <div class="action-arena">
+          <a href="loading.html" id="btn-open-surprise" class="btn btn-primary" data-transition="true">
+            <span>Open Your Surprise</span>
+            <span aria-hidden="true">✨</span>
+          </a>
+
+          <div class="dodge-container">
+            <div id="funny-bubble" class="funny-bubble" role="status" aria-live="polite">Please 🥺</div>
+            <button type="button" id="btn-dodge" aria-label="Playful option">No 😶</button>
+          </div>
+        </div>
+   
+        <div class="entrance-hint">
+          <span>🌙</span>
+          <span>Designed with all my love, just for Pari</span>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Scripts -->
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/index.js"></script>
+</body>
+</html>
+

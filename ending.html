@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Forever & Always — Muskan's Universe</title>
+  <meta name="description" content="A quiet, peaceful and deeply emotional closing to Muskan's personal birthday universe.">
+  <meta name="theme-color" content="#050713">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌙</text></svg>">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/ending.css">
+</head>
+<body>
+
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient music" title="Toggle peaceful ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open chapters" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link active"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene -->
+  <main class="page-wrapper" role="main">
+    <div class="container container-narrow">
+      <div class="ending-scene">
+        <!-- Glowing Moon -->
+        <div class="moon-wrapper" aria-hidden="true">
+          <div class="glowing-moon"></div>
+        </div>
+
+        <article class="ending-card">
+          <p id="ending-line-1" class="stagger-text ending-text-1">
+            “Thank you for being part of my universe.”
+          </p>
+
+          <h1 id="ending-line-2" class="stagger-text ending-text-2">
+            Happy Birthday, Meri Personal Laxmi ❤️
+          </h1>
+
+          <p id="ending-line-3" class="stagger-text ending-text-3">
+            With all my love, today and every tomorrow.
+          </p>
+
+          <div id="final-btn-wrapper" style="opacity: 0; transform: translateY(12px);">
+            <button id="btn-final-surprise" type="button" class="btn btn-royal">
+              <span>One Last Little Surprise... ✨</span>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Final Keepsake Modal Overlay -->
+      <div id="last-surprise-overlay" class="last-surprise-overlay" role="dialog" aria-modal="true" aria-labelledby="last-surprise-title">
+        <div class="last-surprise-modal">
+          <span class="modal-keepsake-badge">Since 02.04.2026 — Our Little Forever</span>
+          <h2 id="last-surprise-title" class="last-surprise-title">A Promise In The Stars</h2>
+          <p class="last-surprise-p">
+            Out of billions of people on this earth, and out of all the stars in the night sky, you are the only one my heart will ever choose. 
+            Born on the sacred night of lights, you truly are Meri Personal Laxmi — the purest light that illuminates my entire existence. 
+            Thank you for your patience, your grace, and for forgiving me when I stumbled. I promise to spend my days making you feel cherished, safe, and truly happy.
+            <br><br>
+            <strong>Happy Birthday & Happy Diwali, Pari. Always yours. 🪔❤️</strong>
+          </p>
+
+          <div class="replay-actions">
+            <a href="index.html" class="btn btn-primary" data-transition="true">
+              <span>Experience Again From The Start ✨</span>
+            </a>
+            <button id="btn-close-last-modal" type="button" class="btn btn-secondary">
+              <span>Close With A Smile 💖</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Journey Footer -->
+      <footer class="journey-footer">
+        <a href="celebration.html" class="footer-nav-btn" data-transition="true">&larr; Return to Celebration</a>
+        <span class="journey-step-indicator">Step 12 of 12 • Complete</span>
+        <a href="hero.html" class="footer-nav-btn" data-transition="true">Return to Memory Orb &rarr;</a>
+      </footer>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/ending.js"></script>
+</body>
+</html>
+

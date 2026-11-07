@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Preparing Her Universe — Muskan's Universe</title>
+  <meta name="description" content="Preparing Muskan's personal cinematic birthday universe.">
+  <meta name="theme-color" content="#050713">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⏳</text></svg>">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/loading.css">
+</head>
+<body>
+
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient music" title="Toggle peaceful ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open chapters" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link active"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene -->
+  <main class="page-wrapper" role="main">
+    <div class="loading-container">
+      <div class="loader-card">
+        <div class="cosmic-loader-ring" aria-hidden="true"></div>
+
+        <div class="tag-pill">
+          <span>💫</span>
+          <span>Preparing Her World</span>
+        </div>
+
+        <div class="loading-message-wrapper" aria-live="polite">
+          <p id="loading-text" class="loading-text">Collecting beautiful moments...</p>
+        </div>
+
+        <div class="progress-bar-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+          <div id="progress-fill" class="progress-bar-fill"></div>
+        </div>
+
+        <span id="progress-pct" class="progress-percentage">0%</span>
+
+        <button id="skip-btn" class="skip-btn" type="button">Skip straight to the universe &rarr;</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/loading.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Our Song & Voice Note — Muskan's Universe</title>
+  <meta name="description" content="A song sung from the bottom of my heart, exclusively for Muskan.">
+  <meta name="theme-color" content="#050713">
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎵</text></svg>">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/our-song.css">
+</head>
+<body>
+
+  <canvas id="ambient-canvas" aria-hidden="true"></canvas>
+
+  <div class="cosmic-halo halo-1" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-2" aria-hidden="true"></div>
+  <div class="cosmic-halo halo-3" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="top-nav" role="banner">
+    <a href="index.html" class="nav-brand" aria-label="Home">
+      <span class="brand-dot" aria-hidden="true"></span>
+      <span class="brand-title">Muskan's Universe</span>
+    </a>
+
+    <div class="nav-controls">
+      <button id="sound-toggle-btn" class="nav-btn" aria-label="Toggle ambient music" title="Toggle peaceful ambient sounds">
+        <span class="sound-bars" aria-hidden="true">
+          <span></span><span></span><span></span>
+        </span>
+        <span class="sound-label">Music</span>
+      </button>
+
+      <button id="drawer-open-btn" class="nav-btn" aria-label="Open chapters" title="View all universe chapters">
+        <span aria-hidden="true">🌌</span>
+        <span>Chapters</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Drawer -->
+  <div id="drawer-overlay" class="drawer-overlay" aria-hidden="true"></div>
+  <nav id="nav-drawer" class="nav-drawer" aria-label="Chapters navigation">
+    <div class="drawer-header">
+      <span class="drawer-title">Her Universe</span>
+      <button id="drawer-close-btn" class="drawer-close" aria-label="Close menu">&times;</button>
+    </div>
+        <ul class="drawer-links">
+      <li><a href="index.html" class="drawer-link"><span>✨</span> 1. The Surprise</a></li>
+      <li><a href="loading.html" class="drawer-link"><span>⏳</span> 2. Preparing Universe</a></li>
+      <li><a href="hero.html" class="drawer-link"><span>🔮</span> 3. The Memory Orb</a></li>
+      <li><a href="memories.html" class="drawer-link"><span>⭐</span> 4. Memories Only We Know</a></li>
+      <li><a href="love-letter.html" class="drawer-link"><span>💌</span> 5. Letter for Wifeee Jiii</a></li>
+      <li><a href="our-song.html" class="drawer-link active"><span>🎵</span> 6. Our Song & Voice Note</a></li>
+      <li><a href="surprises.html" class="drawer-link"><span>🎁</span> 7. Little Surprises</a></li>
+      <li><a href="reasons.html" class="drawer-link"><span>💎</span> 8. Why You're Precious</a></li>
+      <li><a href="our-future.html" class="drawer-link"><span>🕊️</span> 9. A Thousand Tomorrows</a></li>
+      <li><a href="proposal.html" class="drawer-link"><span>💍</span> 10. An Eternal Question</a></li>
+      <li><a href="celebration.html" class="drawer-link"><span>🎆</span> 11. The Grand Celebration</a></li>
+      <li><a href="ending.html" class="drawer-link"><span>🌙</span> 12. Forever & Always</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Scene -->
+  <main class="page-wrapper" role="main">
+    <div class="container container-narrow">
+      <header class="page-header">
+        <div class="tag-pill">
+          <span>🎵</span>
+          <span>Chapter 6 • Melody of Love</span>
+        </div>
+        <h1 class="main-title">A Song From My Heart, Just For You</h1>
+        <p class="subtitle">
+          "Some songs are special. But singing one for you makes it unforgettable."
+        </p>
+      </header>
+
+      <div class="music-experience">
+        <!-- Dual Track Selector Switcher -->
+        <div class="track-switcher" role="tablist" aria-label="Select musical track">
+          <button type="button" class="track-tab active" id="tab-song-1" role="tab" aria-selected="true" data-track="primary">
+            <span class="track-tab-icon">🎵</span>
+            <span class="track-tab-text">
+              <strong>Track 1: Aaj Se Teri</strong>
+              <small>Main Birthday Song</small>
+            </span>
+          </button>
+          <button type="button" class="track-tab" id="tab-song-2" role="tab" aria-selected="false" data-track="complimentary">
+            <span class="track-tab-icon">🌹</span>
+            <span class="track-tab-text">
+              <strong>Track 2: Bade Achhe Lagte Hain</strong>
+              <small>Complimentary Surprise</small>
+            </span>
+          </button>
+        </div>
+
+        <!-- Vinyl Record Player Card -->
+        <div id="player-card" class="player-card">
+          <!-- Floating Vinyl Disc -->
+          <div class="vinyl-container">
+            <div id="vinyl-disc" class="vinyl-disc theme-rose">
+              <div id="vinyl-center-label" class="vinyl-center-label">
+                <span id="vinyl-label-title">AAJ SE TERI</span>
+                <span id="vinyl-label-sub" style="font-size: 0.55rem; color: #ffe3ec; margin-top: 2px;">FOR PARI</span>
+                <div class="vinyl-center-hole"></div>
+              </div>
+            </div>
+          </div>
+
+          <h2 id="song-title" class="song-title">Aaj Se Teri</h2>
+          <p id="song-artist" class="song-artist">Originally by Arijit Singh • Sung with love by Yash</p>
+          <p id="song-tagline" class="song-tagline">“Aaj se teri saari galiyan meri ho gayi... Meri Pari.”</p>
+
+          <!-- Waveform Visualizer -->
+          <div id="waveform-box" class="waveform-box" aria-hidden="true">
+            <!-- Dynamically populated bars -->
+          </div>
+
+          <!-- Scrubber Track -->
+          <div class="scrubber-wrapper">
+            <div id="progress-track" class="progress-track" role="slider" aria-label="Song progress">
+              <div id="progress-current" class="progress-current"></div>
+            </div>
+            <div class="time-row">
+              <span id="time-current">00:00</span>
+              <span id="time-total">03:45</span>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <div class="controls-row">
+            <button id="btn-replay-song" class="ctrl-btn secondary" type="button" aria-label="Replay song" title="Replay">
+              <span>↺</span>
+            </button>
+            <button id="btn-play-song" class="ctrl-btn play-btn" type="button" aria-label="Play song" title="Play / Pause">
+              <span aria-hidden="true">▶</span>
+            </button>
+          </div>
+
+          <!-- Volume -->
+          <div class="volume-row">
+            <span aria-hidden="true">🔊</span>
+            <input type="range" id="volume-slider" class="volume-slider" min="0" max="1" step="0.05" value="0.9" aria-label="Volume">
+          </div>
+
+          <!-- Graceful Status Notice -->
+          <div id="audio-notice" class="audio-status-banner" style="display: none;"></div>
+
+          <button id="btn-unlock-voice" type="button" style="background: none; border: none; color: var(--lavender-light); margin-top: 1.5rem; text-decoration: underline; cursor: pointer; font-size: 0.88rem;">
+            Listen to the personal voice note &rarr;
+          </button>
+        </div>
+
+        <!-- Voice Note Card (Unlocks after song or button click) -->
+        <article id="voice-note-card" class="voice-note-card" aria-label="Personal voice message">
+          <div class="tag-pill royal" style="margin-bottom: 0.8rem;">
+            <span>🎙️</span>
+            <span>Unconditional Love</span>
+          </div>
+          <h2 class="voice-note-title">One More Thing, Just For You...</h2>
+          <p class="voice-note-subtitle">
+            A quiet, personal voice message straight from my heart to your ears.
+          </p>
+
+          <!-- Voice Note Progress -->
+          <div class="scrubber-wrapper" style="max-width: 420px; margin-bottom: 1.2rem;">
+            <div class="progress-track" style="height: 6px;">
+              <div id="voice-progress-current" class="progress-current" style="background: var(--champagne-gold);"></div>
+            </div>
+            <div class="time-row">
+              <span id="voice-time-current">00:00</span>
+              <span>Voice Note</span>
+            </div>
+          </div>
+
+          <button id="btn-play-voice" type="button" class="btn btn-royal" style="padding: 0.8rem 2rem;">
+            <span>▶ Play Voice Note</span>
+          </button>
+        </article>
+      </div>
+
+      <!-- Journey Footer -->
+      <footer class="journey-footer">
+        <a href="love-letter.html" class="footer-nav-btn" data-transition="true">&larr; Return to Love Letter</a>
+        <span class="journey-step-indicator">Step 6 of 11</span>
+        <a href="surprises.html" class="btn btn-primary" data-transition="true">
+          <span>Unwrap Little Surprises</span>
+          <span aria-hidden="true">🎁 &rarr;</span>
+        </a>
+      </footer>
+    </div>
+  </main>
+
+  <script src="js/config.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/our-song.js"></script>
+</body>
+</html>
+
