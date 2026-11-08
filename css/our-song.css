@@ -11,6 +11,8 @@
   margin: 1.5rem auto 3rem;
   width: 100%;
   max-width: 820px;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 /* Track Switcher (Dual Song Selector) */

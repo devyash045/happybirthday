@@ -14,6 +14,7 @@
 .reason-card-container {
   perspective: 1000px;
   height: 290px;
+  touch-action: pan-y;
 }
 
 .reason-card {

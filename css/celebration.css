@@ -13,6 +13,8 @@
   align-items: center;
   text-align: center;
   padding: 2rem 1.5rem;
+  overflow: visible;
+  touch-action: pan-y;
 }
 
 /* Dedicated Fireworks Canvas Layer */
@@ -22,7 +24,7 @@
   width: 100%;
   height: 100%;
   z-index: 8;
-  cursor: crosshair;
+  pointer-events: none;
 }
 
 /* Sky Tap Hint Pill */

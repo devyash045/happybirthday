@@ -27,6 +27,7 @@
   transition: transform 0.4s var(--ease-spring), border-color 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
   overflow: hidden;
+  touch-action: pan-y;
 }
 
 .gift-box-card:hover {

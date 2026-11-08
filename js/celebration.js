@@ -239,15 +239,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  canvas.addEventListener('click', (e) => {
+  // Handle Sky Tap for fireworks (works with pointer-events: none on canvas)
+  document.addEventListener('click', (e) => {
+    // If clicking on buttons, links, balloons, diyas, mystery box or modals, let them handle it
+    if (e.target.closest('button, a, .balloon, .diya, .mystery-gift-wrapper, .modal, .last-surprise-modal')) return;
     handleSkyBurst(e.clientX, e.clientY);
   });
-
-  canvas.addEventListener('touchstart', (e) => {
-    if (e.touches && e.touches.length > 0) {
-      handleSkyBurst(e.touches[0].clientX, e.touches[0].clientY);
-    }
-  }, { passive: true });
 
   // ==========================================================================
   // 4. Click-to-Pop 3D Interactive Balloons
