@@ -88,6 +88,7 @@
 
   function startAtmosphereLoop() {
     cancelAnimationFrame(animFrameId);
+    const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window);
 
     function loop() {
       if (!ctx || !canvas) return;
@@ -109,10 +110,14 @@
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fillStyle = p.color;
         ctx.globalAlpha = p.alpha;
-        ctx.shadowBlur = p.radius * 3;
-        ctx.shadowColor = p.color;
+        if (!isMobileDevice) {
+          ctx.shadowBlur = p.radius * 3;
+          ctx.shadowColor = p.color;
+        }
         ctx.fill();
-        ctx.shadowBlur = 0;
+        if (!isMobileDevice) {
+          ctx.shadowBlur = 0;
+        }
       }
 
       // Draw and animate floating petals
@@ -140,8 +145,10 @@
         ctx.closePath();
 
         ctx.fillStyle = petal.color + petal.opacity + ')';
-        ctx.shadowBlur = petal.isWhite ? 8 : 12;
-        ctx.shadowColor = petal.isWhite ? 'rgba(255, 255, 255, 0.4)' : 'rgba(230, 57, 86, 0.35)';
+        if (!isMobileDevice) {
+          ctx.shadowBlur = petal.isWhite ? 8 : 12;
+          ctx.shadowColor = petal.isWhite ? 'rgba(255, 255, 255, 0.4)' : 'rgba(230, 57, 86, 0.35)';
+        }
         ctx.fill();
         ctx.restore();
       }

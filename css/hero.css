@@ -140,16 +140,19 @@
   z-index: 5;
   background: radial-gradient(circle at 32% 28%, #ffffff 0%, #ffe3ee 14%, #f2a7cb 28%, #a82470 48%, #4a00e0 72%, #12052b 92%);
   box-shadow: 
-    0 0 50px rgba(242, 167, 203, 0.65),
-    0 0 100px rgba(142, 45, 226, 0.55),
-    0 0 160px rgba(244, 208, 111, 0.35),
-    inset 0 0 60px rgba(255, 255, 255, 0.8),
-    inset -22px -25px 65px rgba(8, 3, 24, 0.95);
+    0 0 45px rgba(242, 167, 203, 0.65),
+    0 0 90px rgba(142, 45, 226, 0.55),
+    0 0 130px rgba(244, 208, 111, 0.35),
+    inset 0 0 50px rgba(255, 255, 255, 0.8),
+    inset -18px -20px 50px rgba(8, 3, 24, 0.95);
   display: flex;
   align-items: center;
   justify-content: center;
   transform-style: preserve-3d;
-  transform: perspective(1000px) rotateX(var(--orb-tilt-x, 0deg)) rotateY(var(--orb-tilt-y, 0deg));
+  will-change: transform;
+  transform: translateZ(0) perspective(1000px) rotateX(var(--orb-tilt-x, 0deg)) rotateY(var(--orb-tilt-y, 0deg));
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.4, 1), box-shadow 0.4s ease;
   animation: orbLevitate 6s ease-in-out infinite alternate;
   user-select: none;
@@ -165,9 +168,9 @@
 }
 
 @keyframes orbLevitate {
-  0% { transform: perspective(1000px) translateY(0) rotate(0deg); }
-  50% { transform: perspective(1000px) translateY(-16px) rotate(2.5deg); }
-  100% { transform: perspective(1000px) translateY(10px) rotate(-2.5deg); }
+  0% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -14px, 0) rotate(2.5deg); }
+  100% { transform: translate3d(0, 8px, 0) rotate(-2.5deg); }
 }
 
 /* Pulsing Outer Energy Halo & Corona */
@@ -177,13 +180,16 @@
   border-radius: 50%;
   background: radial-gradient(circle, rgba(242, 167, 203, 0.4) 0%, rgba(142, 45, 226, 0.25) 50%, transparent 72%);
   filter: blur(20px);
+  -webkit-filter: blur(20px);
   pointer-events: none;
+  will-change: transform, opacity;
+  transform: translateZ(0);
   animation: haloBreathe 4s ease-in-out infinite alternate;
 }
 
 @keyframes haloBreathe {
-  0% { transform: scale(0.9); opacity: 0.6; }
-  100% { transform: scale(1.18); opacity: 0.95; filter: blur(28px); }
+  0% { transform: translateZ(0) scale(0.92); opacity: 0.6; }
+  100% { transform: translateZ(0) scale(1.15); opacity: 0.95; }
 }
 
 .orb-outer-corona {
@@ -192,13 +198,16 @@
   border-radius: 50%;
   background: conic-gradient(from 0deg, transparent 0deg, rgba(244, 208, 111, 0.3) 60deg, transparent 120deg, rgba(242, 167, 203, 0.4) 180deg, transparent 240deg, rgba(187, 166, 230, 0.35) 300deg, transparent 360deg);
   filter: blur(8px);
+  -webkit-filter: blur(8px);
   pointer-events: none;
+  will-change: transform;
+  transform: translateZ(0);
   animation: spinCorona 18s linear infinite;
 }
 
 @keyframes spinCorona {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: translateZ(0) rotate(0deg); }
+  100% { transform: translateZ(0) rotate(360deg); }
 }
 
 /* Swirling Internal Plasma & Stars */
@@ -208,13 +217,16 @@
   border-radius: 50%;
   background: radial-gradient(circle at 60% 40%, rgba(244, 208, 111, 0.5) 0%, rgba(230, 57, 86, 0.4) 40%, rgba(142, 45, 226, 0.3) 70%, transparent 90%);
   filter: blur(10px);
+  -webkit-filter: blur(10px);
   mix-blend-mode: screen;
+  will-change: transform;
+  transform: translateZ(0);
   animation: swirlPlasma 8s ease-in-out infinite alternate;
 }
 
 @keyframes swirlPlasma {
-  0% { transform: rotate(0deg) scale(0.95); }
-  100% { transform: rotate(180deg) scale(1.08); }
+  0% { transform: translateZ(0) rotate(0deg) scale(0.95); }
+  100% { transform: translateZ(0) rotate(180deg) scale(1.06); }
 }
 
 .orb-star-cluster {
@@ -230,12 +242,14 @@
   background-repeat: repeat;
   background-size: 200px 200px;
   opacity: 0.85;
+  will-change: transform;
+  transform: translateZ(0);
   animation: rotateStars 25s linear infinite;
 }
 
 @keyframes rotateStars {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% { transform: translateZ(0) rotate(0deg); }
+  100% { transform: translateZ(0) rotate(360deg); }
 }
 
 /* Inner Core & Pulsing Heart */
@@ -245,8 +259,11 @@
   height: 44%;
   border-radius: 50%;
   background: radial-gradient(circle at 35% 35%, #ffffff 0%, #fff0f6 30%, #f4d06f 65%, transparent 90%);
-  filter: blur(3px);
-  box-shadow: 0 0 35px #ffffff, 0 0 60px var(--soft-pink);
+  filter: blur(2.5px);
+  -webkit-filter: blur(2.5px);
+  box-shadow: 0 0 30px #ffffff, 0 0 50px var(--soft-pink);
+  will-change: transform, opacity;
+  transform: translateZ(0);
   animation: corePulseCinematic 2.8s ease-in-out infinite alternate;
   display: flex;
   align-items: center;
@@ -258,17 +275,18 @@
   height: 60%;
   border-radius: 50%;
   background: radial-gradient(circle, #ffffff 0%, rgba(255, 255, 255, 0) 70%);
+  will-change: transform, opacity;
   animation: coreMiniPulse 1.4s ease-in-out infinite alternate;
 }
 
 @keyframes corePulseCinematic {
-  0% { transform: scale(0.82); opacity: 0.8; filter: blur(3px); }
-  100% { transform: scale(1.18); opacity: 1; filter: blur(1.5px) drop-shadow(0 0 25px #ffffff); }
+  0% { transform: translateZ(0) scale(0.85); opacity: 0.8; }
+  100% { transform: translateZ(0) scale(1.15); opacity: 1; }
 }
 
 @keyframes coreMiniPulse {
-  0% { transform: scale(0.7); opacity: 0.5; }
-  100% { transform: scale(1.3); opacity: 1; }
+  0% { transform: translateZ(0) scale(0.75); opacity: 0.55; }
+  100% { transform: translateZ(0) scale(1.25); opacity: 0.95; }
 }
 
 /* ==========================================================================
@@ -280,6 +298,10 @@
   border-radius: 50%;
   pointer-events: none;
   transform-style: preserve-3d;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .ring-gyro-1 {
@@ -345,6 +367,9 @@
   left: 50%;
   border-radius: 50%;
   pointer-events: none;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
 .sat-1 {
@@ -450,15 +475,15 @@
 
 .orb-vibrating {
   animation: intenseOrbVibe 0.1s linear infinite !important;
+  will-change: transform;
 }
 
 @keyframes intenseOrbVibe {
-  0% { transform: translate(0, 0) scale(1.05); }
-  20% { transform: translate(-4px, 3px) scale(1.08); }
-  40% { transform: translate(3px, -4px) scale(1.06); }
-  60% { transform: translate(-3px, -2px) scale(1.09); }
-  80% { transform: translate(4px, 2px) scale(1.07); }
-  100% { transform: translate(0, 0) scale(1.05); }
+  0% { transform: translate3d(0, 0, 0) scale(1.04); }
+  25% { transform: translate3d(-3px, 2px, 0) scale(1.06); }
+  50% { transform: translate3d(3px, -3px, 0) scale(1.05); }
+  75% { transform: translate3d(-2px, -2px, 0) scale(1.07); }
+  100% { transform: translate3d(0, 0, 0) scale(1.04); }
 }
 
 .orb-accelerating .ring-gyro-1 {
@@ -477,14 +502,15 @@
 }
 
 .orb-expanding {
-  transform: scale(22) !important;
+  transform: scale(22) translateZ(0) !important;
   opacity: 0.95;
-  filter: brightness(2.5) contrast(1.3);
+  filter: brightness(2.2);
   box-shadow: 
-    0 0 300px rgba(255, 255, 255, 1),
-    0 0 600px rgba(242, 167, 203, 1),
-    0 0 900px rgba(142, 45, 226, 1) !important;
+    0 0 200px rgba(255, 255, 255, 1),
+    0 0 400px rgba(242, 167, 203, 1),
+    0 0 600px rgba(142, 45, 226, 1) !important;
   transition: transform 1.5s cubic-bezier(0.25, 1, 0.2, 1), box-shadow 1.2s ease, filter 1.2s ease !important;
+  will-change: transform, opacity;
 }
 
 /* Orb Instruction Labels */
@@ -569,10 +595,49 @@
 /* ==========================================================================
    Responsive Adaptations for Hero & Memory Orb
    ========================================================================== */
-@media (max-width: 480px) {
+@media (max-width: 640px) {
   #memoryOrb {
     width: clamp(170px, 48vw, 220px);
     height: clamp(170px, 48vw, 220px);
+    box-shadow: 
+      0 0 30px rgba(242, 167, 203, 0.7),
+      0 0 60px rgba(142, 45, 226, 0.6),
+      0 0 90px rgba(244, 208, 111, 0.35),
+      inset 0 0 35px rgba(255, 255, 255, 0.8),
+      inset -12px -15px 35px rgba(8, 3, 24, 0.95);
+  }
+
+  .orb-energy-halo {
+    filter: blur(14px);
+    -webkit-filter: blur(14px);
+    inset: -22px;
+  }
+
+  .orb-outer-corona {
+    filter: blur(6px);
+    -webkit-filter: blur(6px);
+  }
+
+  .orb-nebula-plasma {
+    filter: blur(7px);
+    -webkit-filter: blur(7px);
+  }
+
+  .ring-gyro-1,
+  .ring-gyro-2,
+  .ring-gyro-3,
+  .ring-gyro-4 {
+    box-shadow: 0 0 10px rgba(244, 208, 111, 0.3);
+  }
+
+  .orb-expanding {
+    transform: scale(14) translateZ(0) !important;
+    opacity: 0.95;
+    box-shadow: 
+      0 0 90px rgba(255, 255, 255, 1),
+      0 0 180px rgba(242, 167, 203, 0.9),
+      0 0 260px rgba(142, 45, 226, 0.85) !important;
+    filter: brightness(1.6);
   }
 
   .live-clock-badge {

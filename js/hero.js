@@ -89,9 +89,10 @@ document.addEventListener('DOMContentLoaded', () => {
     isVortexActive = true;
     resizeVortexCanvas();
 
+    const isMobileDevice = window.innerWidth < 768 || ('ontouchstart' in window);
     const centerX = vortexCanvas.width / 2;
     const centerY = vortexCanvas.height / 2;
-    const particleCount = 140;
+    const particleCount = isMobileDevice ? 45 : 120;
     vortexParticles = [];
 
     const vortexColors = ['#f4d06f', '#f2a7cb', '#ffffff', '#bba6e6', '#ffd700'];
@@ -111,6 +112,8 @@ document.addEventListener('DOMContentLoaded', () => {
         alpha: Math.random() * 0.8 + 0.2
       });
     }
+
+    const useShadows = !isMobileDevice;
 
     function renderVortex() {
       if (!isVortexActive) return;
@@ -136,11 +139,15 @@ document.addEventListener('DOMContentLoaded', () => {
         vortexCtx.beginPath();
         vortexCtx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         vortexCtx.fillStyle = p.color;
-        vortexCtx.shadowBlur = 10;
-        vortexCtx.shadowColor = p.color;
         vortexCtx.globalAlpha = p.alpha;
+        if (useShadows) {
+          vortexCtx.shadowBlur = 8;
+          vortexCtx.shadowColor = p.color;
+        }
         vortexCtx.fill();
-        vortexCtx.shadowBlur = 0;
+        if (useShadows) {
+          vortexCtx.shadowBlur = 0;
+        }
       }
 
       vortexAnimId = requestAnimationFrame(renderVortex);
@@ -213,6 +220,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // I. Smooth Navigation to memories.html
     setTimeout(() => {
+      isVortexActive = false;
+      if (vortexAnimId) cancelAnimationFrame(vortexAnimId);
       window.location.href = 'memories.html';
     }, 2800);
   }
