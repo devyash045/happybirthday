@@ -325,26 +325,73 @@
 
 @media (max-width: 640px) {
   .constellation-wrapper {
-    padding: 1.25rem 0.8rem;
+    padding: 1rem 0.6rem;
     border-radius: 20px;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
   }
   .constellation-heading {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
+    padding: 0 0.4rem;
+  }
+  .storybook-container {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0;
   }
   .storybook {
-    padding: 1.5rem 1.1rem;
+    padding: 1.5rem 1rem 1.5rem 1.4rem;
     border-radius: 18px;
     min-height: auto;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+  .storybook::before {
+    width: 6px;
+  }
+  .chapter-title {
+    font-size: clamp(1.3rem, 5vw, 1.6rem);
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .chapter-subtitle {
+    font-size: 0.92rem;
+    word-break: break-word;
+  }
+  .chapter-detail {
+    font-size: 0.95rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.65;
   }
   .symbolic-art-box {
     flex-direction: column;
     text-align: center;
     gap: 0.6rem;
+    padding: 1rem 0.8rem;
   }
   .accountability-box {
-    padding: 1rem 1.1rem;
+    padding: 1rem 0.9rem;
+    border-radius: 12px;
+    word-break: break-word;
+  }
+  .accountability-title {
+    font-size: 1.05rem;
+    word-break: break-word;
+  }
+  .accountability-list li {
+    font-size: 0.88rem;
+    line-height: 1.55;
+    word-break: break-word;
+  }
+  .chapter-quote {
+    font-size: 0.98rem;
+    word-break: break-word;
   }
   .storybook-controls {
     flex-wrap: wrap;

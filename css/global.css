@@ -66,10 +66,10 @@ html {
   background-color: var(--midnight-navy);
   color: var(--pearl-white);
   min-height: 100%;
-  height: auto;
+  width: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
 }
 
 body {
@@ -78,21 +78,13 @@ body {
   color: var(--pearl-white);
   min-height: 100vh;
   min-height: 100svh;
-  height: auto;
-  overflow-x: clip;
-  overflow-y: visible;
+  width: 100%;
+  overflow-x: hidden;
   position: relative;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-overflow-scrolling: touch;
-  touch-action: pan-y;
-}
-
-@supports not (overflow-x: clip) {
-  body {
-    overflow-x: hidden;
-  }
 }
 
 /* Background Atmosphere Canvases */
@@ -286,12 +278,16 @@ body {
   display: flex;
   flex-direction: column;
   transform: translateX(105%);
-  transition: transform 0.4s var(--ease-spring);
+  transition: transform 0.4s var(--ease-spring), visibility 0.4s ease;
   box-shadow: -15px 0 50px rgba(0, 0, 0, 0.8);
+  visibility: hidden;
+  pointer-events: none;
 }
 
 .nav-drawer.open {
   transform: translateX(0);
+  visibility: visible;
+  pointer-events: auto;
 }
 
 .drawer-header {
@@ -619,35 +615,29 @@ body {
    ========================================================================== */
 
 .fade-in-scene {
-  animation: sceneEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: sceneEntrance 0.5s ease-out forwards;
 }
 
 @keyframes sceneEntrance {
   0% {
     opacity: 0;
-    transform: translateY(18px) scale(0.98);
   }
   100% {
     opacity: 1;
-    transform: translateY(0) scale(1);
   }
 }
 
 .fade-out-scene {
-  animation: sceneExit 0.6s cubic-bezier(0.7, 0, 0.84, 0) forwards;
+  animation: sceneExit 0.4s ease-in forwards;
   pointer-events: none;
 }
 
 @keyframes sceneExit {
   0% {
     opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0px);
   }
   100% {
     opacity: 0;
-    transform: translateY(-15px) scale(0.97);
-    filter: blur(10px);
   }
 }
 
@@ -707,6 +697,9 @@ body {
   .tag-pill {
     font-size: 0.72rem;
     padding: 0.3rem 0.8rem;
+  }
+  .container {
+    padding: 0 0.75rem;
   }
 }
 

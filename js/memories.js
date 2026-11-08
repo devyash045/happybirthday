@@ -89,7 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
     nodes.forEach((n, i) => {
       if (i === idx) {
         n.classList.add('active');
-        n.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        if (track) {
+          const trackRect = track.getBoundingClientRect();
+          const nodeRect = n.getBoundingClientRect();
+          const scrollOffset = (nodeRect.left - trackRect.left) - (trackRect.width / 2) + (nodeRect.width / 2);
+          track.scrollBy({ left: scrollOffset, behavior: 'smooth' });
+        }
       } else {
         n.classList.remove('active');
       }
