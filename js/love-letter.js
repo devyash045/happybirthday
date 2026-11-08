@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Slide and reveal letter paper
     setTimeout(() => {
       letterPaper.classList.add('revealed');
-      letterPaper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      letterPaper.scrollIntoView({ behavior: 'smooth', block: 'start', inline: 'nearest' });
 
       if (letterActions) {
         letterActions.style.display = 'flex';
