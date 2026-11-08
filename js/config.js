@@ -308,9 +308,9 @@ window.BIRTHDAY_CONFIG = {
     {
       year: "Dream 3",
       title: "Travelling The World Together",
-      icon: "✈️",
-      description: "Exploring misty mountains, walking through quaint European streets, watching golden sunsets over calm beaches, and collecting memories in every corner of the earth.",
-      scene: "Walking hand in hand through quiet rain under one umbrella in a picturesque town."
+      icon: "🛕",
+      description: "Exploring misty mountains, visiting sacred temples and seeking Madhav's blessings hand-in-hand, walking along serene riverbanks and lush green valleys, and finding quiet peace in the lap of pure nature together.",
+      scene: "Holding hands in the peaceful aura of sacred temple bells, and watching golden sunrises over misty mountain peaks."
     },
     {
       year: "Dream 4",
