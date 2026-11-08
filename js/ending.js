@@ -36,9 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }, 4400);
 
+  // Ensure modal is direct child of body
+  if (modalOverlay && modalOverlay.parentElement !== document.body) {
+    document.body.appendChild(modalOverlay);
+  }
+
   // Final Modal Open
   function openFinalModal() {
     if (modalOverlay) {
+      modalOverlay.scrollTop = 0;
+      const box = modalOverlay.querySelector('.last-surprise-modal');
+      if (box) box.scrollTop = 0;
+
+      document.body.classList.add('modal-open');
       modalOverlay.classList.add('active');
       if (window.playChime) {
         window.playChime(587.33);
@@ -49,6 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function closeFinalModal() {
     if (modalOverlay) modalOverlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
   }
 
   if (btnFinalSurprise) btnFinalSurprise.addEventListener('click', openFinalModal);

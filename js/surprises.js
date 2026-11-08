@@ -14,6 +14,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalText = document.getElementById('modal-text');
   const modalCloseBtn = document.getElementById('modal-close-btn');
 
+  // Ensure modal is direct child of body for rock-solid fixed positioning
+  if (modalOverlay && modalOverlay.parentElement !== document.body) {
+    document.body.appendChild(modalOverlay);
+  }
+
   // Build Gifts Grid
   function buildGifts() {
     if (!grid) return;
@@ -37,15 +42,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
       function triggerOpen() {
         card.classList.add('opened');
-        card.querySelector('.gift-prompt-btn').textContent = 'Revisit Surprise 💖';
+        const promptBtn = card.querySelector('.gift-prompt-btn');
+        if (promptBtn) promptBtn.textContent = 'Revisit Surprise 💖';
         if (window.playChime) window.playChime(700 + idx * 60);
 
         // Populate Modal
-        modalIcon.textContent = gift.icon;
-        modalTitle.textContent = gift.revealedTitle;
-        modalText.textContent = gift.content;
+        if (modalIcon) modalIcon.textContent = gift.icon;
+        if (modalTitle) modalTitle.textContent = gift.revealedTitle;
+        if (modalText) modalText.textContent = gift.content;
 
-        modalOverlay.classList.add('active');
+        // Reset scroll position to top
+        if (modalOverlay) {
+          modalOverlay.scrollTop = 0;
+          const box = modalOverlay.querySelector('.surprise-modal');
+          if (box) box.scrollTop = 0;
+          modalOverlay.classList.add('active');
+        }
+
+        // Lock background document scroll
+        document.body.classList.add('modal-open');
       }
 
       card.addEventListener('click', triggerOpen);
@@ -62,7 +77,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Close Modal Handlers
   function closeModal() {
-    modalOverlay.classList.remove('active');
+    if (modalOverlay) modalOverlay.classList.remove('active');
+    document.body.classList.remove('modal-open');
   }
 
   if (modalCloseBtn) modalCloseBtn.addEventListener('click', closeModal);

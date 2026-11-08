@@ -407,19 +407,23 @@
       modal = document.createElement('div');
       modal.id = 'easter-egg-modal';
       modal.style.cssText = `
-        position: fixed; inset: 0; z-index: 100000;
-        background: rgba(6, 8, 20, 0.85); backdrop-filter: blur(16px);
+        position: fixed; inset: 0; z-index: 1000000;
+        width: 100vw; width: 100dvw; height: 100vh; height: 100dvh;
+        background: rgba(6, 8, 20, 0.88); backdrop-filter: blur(16px);
         display: flex; align-items: center; justify-content: center;
-        padding: 1.5rem; opacity: 0; transition: opacity 0.4s ease;
+        padding: 1rem; box-sizing: border-box; overflow-y: auto;
+        opacity: 0; transition: opacity 0.35s ease;
       `;
       modal.innerHTML = `
         <div style="
-          max-width: 440px; width: 100%; background: linear-gradient(135deg, rgba(35, 18, 69, 0.95), rgba(18, 11, 41, 0.95));
-          border: 1px solid rgba(244, 208, 111, 0.5); border-radius: 24px; padding: 2.2rem;
+          max-width: 440px; width: min(440px, 92vw); max-height: min(85vh, 85dvh); margin: auto;
+          background: linear-gradient(135deg, rgba(35, 18, 69, 0.98), rgba(18, 11, 41, 0.98));
+          border: 1px solid rgba(244, 208, 111, 0.5); border-radius: 24px; padding: clamp(1.4rem, 4vw, 2.2rem);
           text-align: center; box-shadow: 0 15px 50px rgba(0,0,0,0.8), 0 0 40px rgba(244, 208, 111, 0.3);
+          overflow-y: auto; -webkit-overflow-scrolling: touch; box-sizing: border-box;
         ">
           <div style="font-size: 2.5rem; margin-bottom: 0.8rem;">✨ 🤍 🌹</div>
-          <h3 style="font-family: var(--font-display); font-size: 1.6rem; color: var(--champagne-gold); margin-bottom: 0.5rem;">
+          <h3 style="font-family: var(--font-display); font-size: 1.5rem; color: var(--champagne-gold); margin-bottom: 0.5rem;">
             A Secret Star For Pari
           </h3>
           <p style="color: var(--white-muted); font-size: 0.98rem; line-height: 1.6; margin-bottom: 1.5rem;">
@@ -433,12 +437,19 @@
       `;
       document.body.appendChild(modal);
 
-      modal.querySelector('#close-easter-egg').addEventListener('click', () => {
+      function closeEasterEgg() {
         modal.style.opacity = '0';
-        setTimeout(() => { modal.style.display = 'none'; }, 400);
+        document.body.classList.remove('modal-open');
+        setTimeout(() => { modal.style.display = 'none'; }, 350);
+      }
+
+      modal.querySelector('#close-easter-egg').addEventListener('click', closeEasterEgg);
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeEasterEgg();
       });
     }
 
+    document.body.classList.add('modal-open');
     modal.style.display = 'flex';
     requestAnimationFrame(() => {
       modal.style.opacity = '1';
@@ -450,6 +461,9 @@
   // ==========================================================================
   document.addEventListener('DOMContentLoaded', () => {
     document.body.classList.add('fade-in-scene');
+    setTimeout(() => {
+      document.body.classList.remove('fade-in-scene');
+    }, 500);
 
     // Attach ambient sound toggle listener
     const soundToggle = document.getElementById('sound-toggle-btn');

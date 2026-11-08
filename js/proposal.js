@@ -63,17 +63,46 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Ensure shyModal is direct child of body
+  if (shyModal && shyModal.parentElement !== document.body) {
+    document.body.appendChild(shyModal);
+  }
+
+  function closeShyModal() {
+    if (shyModal) shyModal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+  }
+
   // Handle Shy Yes
   if (btnShyYes) {
     btnShyYes.addEventListener('click', () => {
       if (window.playChime) window.playChime(880);
-      if (shyModal) shyModal.classList.add('active');
+      if (shyModal) {
+        shyModal.scrollTop = 0;
+        const box = shyModal.querySelector('.shy-modal');
+        if (box) box.scrollTop = 0;
+        document.body.classList.add('modal-open');
+        shyModal.classList.add('active');
+      }
     });
   }
+
+  if (shyModal) {
+    shyModal.addEventListener('click', (e) => {
+      if (e.target === shyModal) closeShyModal();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && shyModal && shyModal.classList.contains('active')) {
+      closeShyModal();
+    }
+  });
 
   if (btnShyProceed) {
     btnShyProceed.addEventListener('click', (e) => {
       e.preventDefault();
+      closeShyModal();
       document.body.classList.add('fade-out-scene');
       setTimeout(() => {
         window.location.href = 'celebration.html';
